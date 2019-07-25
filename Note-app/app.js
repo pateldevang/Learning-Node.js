@@ -5,6 +5,16 @@ const os = require('os');
 const notes = require('./notes.js');
 const chalk = require('chalk');
 
+const command = process.argv[2];
+
+
+if (command === 'add') {
+  console.log('Note ADDED');
+}
+else if (command === 'remove') {
+  console.log('Note removed');
+}
+
 
 console.log(chalk.blue('Success!'));
 
