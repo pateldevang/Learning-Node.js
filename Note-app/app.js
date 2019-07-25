@@ -3,7 +3,9 @@ console.log('Starting app.js');
 const fs = require('fs');
 const os = require('os');
 const notes = require('./notes.js');
+const validator = require('validator')
 
+console.log(validator.isURL('www.devangpatel.in'))
 
 var user = os.userInfo()
 var userName = os.userInfo().username
