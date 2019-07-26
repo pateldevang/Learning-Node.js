@@ -1,4 +1,4 @@
-console.log('Starting Note.js');
+// console.log('Starting Note.js');
 
 module.exports.addNote = () => {
 
