@@ -30,6 +30,16 @@ app.get('/about', (req, res) => {
     })
 })
 
+app.get('/help', (req, res) => {
+    res.render('help', {
+        title: 'Help Page',
+        name: 'Andrew'
+    })
+})
+
+
+
+
 // app.get('',(req, res) => {
 //     res.send('<h1>Weather</h1>')
 // })
