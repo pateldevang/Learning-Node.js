@@ -1,13 +1,6 @@
 console.log('Client side java script file loaded!')
 
-fetch('http://puzzle.mead.io/puzzle').then((response) => {
-    response.json().then((data) => {
-        console.log(data)
-    })
-})
-
-
-fetch('http://localhost:3000/weather?address=!').then((response) => {
+fetch('http://localhost:3000/weather?address=Mumbai').then((response) => {
     response.json().then((data) => {
         if (data.error) {
             console.log(data.error)
