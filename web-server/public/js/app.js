@@ -1,5 +1,12 @@
 console.log('Client side java script file loaded!')
 
+const test = {
+    name: 'Rohan',
+    test: 'sefreg'
+}
+
+console.log(test)
+
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
