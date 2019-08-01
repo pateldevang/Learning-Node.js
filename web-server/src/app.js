@@ -35,7 +35,7 @@ app.get('/about', (req, res) => {
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        helpText: 'This is some helpful text.',
+        helpText: 'This site was created by Devang Patel. It uses data from mapbox.com and darksky.net',
         title: 'Help',
         name: 'Devang Patel'
     })
