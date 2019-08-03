@@ -13,7 +13,7 @@ MongoClient.connect(connectioURL, { useNewUrlParser: true }, (error, client) => 
     }
 
     const db = client.db(databaseName)
-    
+
     // db.collection('users').insertOne({
     //     name: 'Devang',
     //     age: 19
@@ -24,18 +24,40 @@ MongoClient.connect(connectioURL, { useNewUrlParser: true }, (error, client) => 
     //     console.log(result.ops)
     // })
 
+    // db.collection('users').insertMany([
+    //     {
+    //         name: 'Jen',
+    //         age: 28
+    //     }, {
+    //         name: 'Andrew',
+    //         age: 27
+    //     }
+    // ], (error, result) => {
+    //     if (error) {
+    //         return console.log(error)
+    //     }
+    //     console.log(result.ops)
+    // })
+
+
     db.collection('users').insertMany([
         {
-            name: 'Jen',
-            age: 28
+            description: 'Buy milk & eggs',
+            completed: false
         }, {
-            name: 'Andrew',
-            age: 27
+            description: 'Prepare egg',
+            completed: false
+        }, {
+            description: 'Eat food',
+            completed: false
         }
     ], (error, result) => {
         if (error) {
-            return console.log(error)
+            return console.log('Unable to add the job.')
         }
         console.log(result.ops)
     })
+
+
+
 })
