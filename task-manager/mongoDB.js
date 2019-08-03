@@ -40,7 +40,7 @@ MongoClient.connect(connectioURL, { useNewUrlParser: true }, (error, client) => 
     // })
 
 
-    db.collection('users').insertMany([
+    db.collection('tasks').insertMany([
         {
             description: 'Buy milk & eggs',
             completed: false
