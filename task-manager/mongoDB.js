@@ -1,10 +1,15 @@
 //CRUD create read update delete
 
-const mongodb = require('mongodb')
-const MongoClient = mongodb.MongoClient
+// const mongodb = require('mongodb')
+// const MongoClient = mongodb.MongoClient
+// const ObjectID = mongodb.ObjectID
+
+const { MongoClient, ObjectID } = require('mongodb')
 
 const connectioURL = 'mongodb://127.0.0.1:27017'
 const databaseName = 'task-manager'
+const id = new ObjectID()
+
 
 MongoClient.connect(connectioURL, { useNewUrlParser: true }, (error, client) => {
 
@@ -40,23 +45,25 @@ MongoClient.connect(connectioURL, { useNewUrlParser: true }, (error, client) => 
     // })
 
 
-    db.collection('tasks').insertMany([
-        {
-            description: 'Buy milk & eggs',
-            completed: false
-        }, {
-            description: 'Prepare egg',
-            completed: false
-        }, {
-            description: 'Eat food',
-            completed: false
-        }
-    ], (error, result) => {
-        if (error) {
-            return console.log('Unable to add the job.')
-        }
-        console.log(result.ops)
-    })
+    // db.collection('tasks').insertMany([
+    //     {
+    //         description: 'Buy milk & eggs',
+    //         completed: false
+    //     }, {
+    //         description: 'Prepare egg',
+    //         completed: false
+    //     }, {
+    //         description: 'Eat food',
+    //         completed: false
+    //     }
+    // ], (error, result) => {
+    //     if (error) {
+    //         return console.log('Unable to add the job.')
+    //     }
+    //     console.log(result.ops)
+    // })
+
+
 
 
 
