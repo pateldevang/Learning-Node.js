@@ -21,15 +21,16 @@ MongoClient.connect(connectioURL, { useNewUrlParser: true }, (error, client) => 
 
     const db = client.db(databaseName)
 
-    // db.collection('users').insertOne({
-    //     name: 'Devang',
-    //     age: 19
-    // }, (error, result) => {
-    //     if (error) {
-    //         console.log('Unable to insert user')
-    //     }
-    //     console.log(result.ops)
-    // })
+    db.collection('users').insertOne({
+        _id: id,
+        name: 'vikram',
+        age: 26
+    }, (error, result) => {
+        if (error) {
+            console.log('Unable to insert user')
+        }
+        console.log(result.ops)
+    })
 
     // db.collection('users').insertMany([
     //     {
