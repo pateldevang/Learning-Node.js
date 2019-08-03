@@ -11,7 +11,7 @@ const databaseName = 'task-manager'
 
 const id = new ObjectID()
 console.log(id.id.length)
-console.log(id.getTimestamp())
+console.log(id.toHexString().length)
 
 MongoClient.connect(connectioURL, { useNewUrlParser: true }, (error, client) => {
 
