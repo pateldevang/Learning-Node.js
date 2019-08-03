@@ -10,7 +10,7 @@ const connectioURL = 'mongodb://127.0.0.1:27017'
 const databaseName = 'task-manager'
 
 const id = new ObjectID()
-console.log(id.id)
+console.log(id.id.length)
 console.log(id.getTimestamp())
 
 MongoClient.connect(connectioURL, { useNewUrlParser: true }, (error, client) => {
