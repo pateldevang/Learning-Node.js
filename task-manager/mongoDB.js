@@ -17,20 +17,16 @@ MongoClient.connect(connectioURL, { useNewUrlParser: true }, (error, client) => 
 
     const db = client.db(databaseName)
 
-    // db.collection('users').findOne({ _id: new ObjectID("5d452c432d7750054d6af2a0") }, (error, user) => {
+    db.collection('tasks').findOne({ _id: new ObjectID("5d45243f586c380475bd0365") }, (error, user) => {
 
-    //     if (error) {
-    //         return console.log(error)
-    //     }
-    //     console.log(user)
-    // })
-
-    db.collection('users').find({ age: 19 }).toArray((error, users) => {
-        console.log(users)
+        if (error) {
+            return console.log(error)
+        }
+        console.log(user)
     })
 
-    db.collection('users').find({ age: 19 }).count((error, count) => {
-        console.log(count)
+    db.collection('tasks').find({ completed: false }).toArray((error, users) => {
+        console.log(users)
     })
 
 })
