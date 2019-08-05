@@ -1,8 +1,5 @@
 //CRUD create read update delete
 
-// const mongodb = require('mongodb')
-// const MongoClient = mongodb.MongoClient
-// const ObjectID = mongodb.ObjectID
 
 const { MongoClient, ObjectID } = require('mongodb')
 
@@ -16,6 +13,21 @@ MongoClient.connect(connectioURL, { useNewUrlParser: true }, (error, client) => 
     }
 
     const db = client.db(databaseName)
+
+    const updatePromise = db.collection('users').updateOne({
+        _id: new ObjectID("5d452c432d7750054d6af2a0")
+    }, {
+        $set: {
+            name: 'Mike'
+        }
+    })
+
+
+    updatePromise.then((result) => {
+        console.log(result)
+    }).catch((error) => {
+        console.log(error)
+    })
 
     
 })
