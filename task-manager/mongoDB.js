@@ -14,16 +14,13 @@ MongoClient.connect(connectioURL, { useNewUrlParser: true }, (error, client) => 
 
     const db = client.db(databaseName)
 
-    const updatePromise = db.collection('users').updateOne({
+    db.collection('users').updateOne({
         _id: new ObjectID("5d452c432d7750054d6af2a0")
     }, {
         $set: {
-            name: 'Mike'
+            name: 'Mike1'
         }
-    })
-
-
-    updatePromise.then((result) => {
+    }).then((result) => {
         console.log(result)
     }).catch((error) => {
         console.log(error)
